@@ -96,7 +96,7 @@ class _PokeDetailPageState
                     leading: IconButton(
                       icon: Icon(Icons.arrow_back),
                       onPressed: () {
-                        Navigator.pop(context);
+                        Modular.to.pop(context);
                       },
                     ),
                     actions: [

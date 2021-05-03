@@ -83,23 +83,7 @@ class _PokeItemState extends ModularState<PokeItem, ListPokemonsController> {
             if (snapshot.hasData) {
               return GestureDetector(
                 onTap: () {
-                  // _pokemonStore.setCurrentPokemonApiV2(
-                  //   index: widget.index,
-                  //   pokemon: _pokemon,
-                  // );
-
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(
-                  //     builder: (BuildContext context) {
-                  //       return PokeDatailPage(
-                  //         index: widget.index,
-                  //       );
-                  //     },
-                  //     fullscreenDialog: true,
-                  //   ),
-                  // );
-                  Modular.to.navigate('/poke-detail/${widget.index}',
+                  Modular.to.pushNamed('/poke-detail/${widget.index}',
                       arguments: [
                         _pokemon,
                         controller.generationDetail.pokemonSpecies
