@@ -100,6 +100,8 @@ class _ListPokemonsPageState
                                       child: ScaleAnimation(
                                         child: GestureDetector(
                                           child: PokeItem(
+                                            generationDetail:
+                                                controller.generationDetail,
                                             name: pokemon.name,
                                             url: pokemon.url,
                                             index: i,

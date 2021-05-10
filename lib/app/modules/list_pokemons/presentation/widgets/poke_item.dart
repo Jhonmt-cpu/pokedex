@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:pokedex_modular/app/core/consts/consts_app.dart';
 import 'package:pokedex_modular/app/core/pokemon/domain/entities/pokemon.dart';
+import 'package:pokedex_modular/app/modules/list_pokemons/domain/entities/generation_detail.dart';
 import 'package:pokedex_modular/app/modules/list_pokemons/presentation/list_pokemons_controller.dart';
 
 class PokeItem extends StatefulWidget {
+  final GenerationDetail generationDetail;
   final String name;
   final String url;
   final int index;
@@ -15,6 +17,7 @@ class PokeItem extends StatefulWidget {
     this.name,
     this.url,
     this.index,
+    this.generationDetail,
   }) : super(key: key);
 
   @override
@@ -86,7 +89,7 @@ class _PokeItemState extends ModularState<PokeItem, ListPokemonsController> {
                   Modular.to.pushNamed('/poke-detail/${widget.index}',
                       arguments: [
                         _pokemon,
-                        controller.generationDetail.pokemonSpecies
+                        widget.generationDetail.pokemonSpecies
                       ]);
                 },
                 child: Container(
